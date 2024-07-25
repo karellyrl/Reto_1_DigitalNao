@@ -1,4 +1,4 @@
-/*===============Propiedades Globales================*/
+/*Propiedades Globales*/
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
@@ -8,7 +8,8 @@ body {
 }
 
 
-/*===================MENU==========================*/
+/*Menu de la Pagina*/
+
  #menu a, button{
      font-size: 18px !important;
      font-weight: 600;
@@ -20,14 +21,14 @@ body {
      
  }
 
- /*===================SLIDER DE IMAGENES==========================*/
+ /*Slider*/
 
 .carousel-inner {
     max-height:50rem !important;
 }
 
 
-/*=========================CONTACTOS BACKGROUND================================*/
+/*Contactos*/
 
 #bg-contactos{
     position:relative;
@@ -40,7 +41,7 @@ body {
     position:relative;
 }
 
-/*=========================CONTACTOS FORMULARIO================================*/
+/*Formulario*/
 
 #contenedor-formulario {
     position: relative; 
@@ -54,7 +55,7 @@ body {
     color: #3f3f3f;
 }
 
-/*=========================FOOTER================================*/
+/*Footer*/
 
 footer {
     background: #000000dc;
@@ -70,10 +71,10 @@ footer p{
     color:#f3f3f3;
 }
 
-/*=========================MEDIA QUERIES PANTALLA ANCHA================================*/
+/*Media Queries Pantalla ancha*/
 
 @media (max-width:1200px){
-    #intro, #servicios-fila-1 {
+    #intro, #servicios-fila-1, #servicios-fila-2{
         width:90% !important;
         margin:auto;
     }
@@ -89,12 +90,12 @@ footer p{
    }
  
 }
-/*=========================MEDIA QUERIES PANTALLA SM================================*/
+/*Media Queries Pantalla SM*/
 
 
 @media (max-width:768px) {
 
-    #intro, #servicios-fila-1{
+    #intro, #servicios-fila-1, #servicios-fila-2{
         width:90% !important;
         margin:auto;
     }
@@ -116,7 +117,7 @@ footer p{
 
 
 }
-/*=========================MEDIA QUERIES PANTALLA EXTRA-SM================================*/
+/*Media Queries Pantalla extra-SM*/
 
 @media (max-width: 576px) {
     #servicios-fila-2 {
