@@ -1,25 +1,32 @@
-// validacion.js
-
 document.addEventListener('DOMContentLoaded', function() {
-  // Selecciona el formulario
+  // obteniendo el formulario
   var form = document.getElementById('contactForm');
-  
-  // Añade un evento al enviar el formulario
+
+  // se añade un evento al enviar el formulario
   form.addEventListener('submit', function(event) {
-    // Selecciona el campo de correo electrónico
+    // se selecciona el campo de correo electrónico
     var email = document.getElementById('email').value;
-    
-    // Expresión regular para validar el correo electrónico
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    // Verifica si el correo electrónico es válido
-    if (!emailRegex.test(email)) {
-      // Evita el envío del formulario
+
+    // validar el correo electrónico
+    var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // verificar si el correo electrónico es valido
+    if (!emailReg.test(email)) {
+      // evitar el envio del formulario
       event.preventDefault();
-      
-      // Muestra un mensaje de error
+
+      // muestra un mensaje de error
       alert('Por favor, introduce una dirección de correo electrónico válida.');
+    } else {
+      // evitar el comportamiento por defecto
+      event.preventDefault();
+
+      // envio del formulario
+      setTimeout(function() {
+        // mensaje de éxito
+        var successMessage = document.getElementById('success-message');
+        successMessage.classList.remove('d-none');
+      }, 500);
     }
   });
 });
-
