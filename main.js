@@ -4,29 +4,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // se añade un evento al enviar el formulario
   form.addEventListener('submit', function(event) {
-    // se selecciona el campo de correo electrónico
-    var email = document.getElementById('email').value;
+    // evitar el comportamiento por defecto
+    event.preventDefault();
+    event.stopPropagation();
 
-    // validar el correo electrónico
-    var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // verificar si el formulario es válido
+    if (form.checkValidity() === true) {
+      // ocultar el mensaje de error si está visible
+      var errorMessage = document.getElementById('error-message');
+      errorMessage.classList.add('d-none');
 
-    // verificar si el correo electrónico es valido
-    if (!emailReg.test(email)) {
-      // evitar el envio del formulario
-      event.preventDefault();
-
-      // muestra un mensaje de error
-      alert('Por favor, introduce una dirección de correo electrónico válida.');
+      // mostrar el mensaje de éxito
+      var successMessage = document.getElementById('success-message');
+      successMessage.classList.remove('d-none');
     } else {
-      // evitar el comportamiento por defecto
-      event.preventDefault();
+      // mostrar los errores de validación de Bootstrap
+      form.classList.add('was-validated');
 
-      // envio del formulario
-      setTimeout(function() {
-        // mensaje de éxito
-        var successMessage = document.getElementById('success-message');
-        successMessage.classList.remove('d-none');
-      }, 500);
+      // ocultar el mensaje de éxito si está visible
+      var successMessage = document.getElementById('success-message');
+      successMessage.classList.add('d-none');
+
+      // mostrar el mensaje de error
+      var errorMessage = document.getElementById('error-message');
+      errorMessage.classList.remove('d-none');
     }
-  });
+  }, false);
 });
