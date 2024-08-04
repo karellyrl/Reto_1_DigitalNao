@@ -138,26 +138,42 @@
       <p class="fs-5">¡Empieza hoy y transforma tus finanzas con los consejos de una experta!</p>
     </div>
 
-    <form id="contactForm" method="POST" data-netlify="true">     
-      <div class="mb-3">           
-        <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico">
-      </div>
-      <div class="mb-3">            
-        <input type="input" class="form-control" id="name" name="name" placeholder="Nombre">
+    <form id="contactForm" method="POST" data-netlify="true" novalidate>
+      <div class="mb-3">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required>
+        <div class="invalid-feedback">
+          Por favor, introduce una dirección de correo electrónico válida.
+        </div>
       </div>
       <div class="mb-3">
-        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Teléfono">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+        <div class="invalid-feedback">
+          Por favor, introduce tu nombre.
+        </div>
       </div>
-      <div class="mb-3">       
-        <textarea class="form-control" name="message" id="message" rows="4" placeholder="Describe tus objetivos de emprendimiento"></textarea>
+      <div class="mb-3">
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Teléfono" required>
+        <div class="invalid-feedback">
+          Por favor, introduce tu teléfono.
+        </div>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" name="message" id="message" rows="4" placeholder="Describe tus objetivos de emprendimiento" required></textarea>
+        <div class="invalid-feedback">
+          Por favor, introduce una descripción.
+        </div>
       </div>
       <div class="mb-3">
         <button type="submit" class="btn btn-dark w-100 fs-5">Enviar</button>
       </div>
     </form>
-                  <!-- Contenedor para el mensaje de éxito -->
+                    <!-- Contenedor para el mensaje de éxito -->
     <div id="success-message" class="alert alert-success d-none" role="alert">
       ¡Gracias! Tus datos han sido enviados exitosamente.
+    </div>
+                    <!-- Contenedor para el mensaje de error -->
+    <div id="error-message" class="alert alert-danger d-none" role="alert">
+    Por favor, completa todos los campos correctamente.
     </div>
   </div>
 </section>
